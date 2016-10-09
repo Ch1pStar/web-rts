@@ -1,0 +1,17 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@fae/ecs": "*",
+    "mini-signals": "*"
+  },
+  "scripts": {
+    "clean": "rm -rf dist/",
+    "hash": "git rev-parse HEAD > .commit",
+    "build": "set NODE_ENV=production && npm run hash && rollup -c",
+    "dev": "npm run hash && rollup -c",
+    "watch": "npm run dev -- --watch",
+    "start": "npm run dev && node dist/main.cjs.js"
+  }
+}
